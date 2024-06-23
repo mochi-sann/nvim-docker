@@ -1,0 +1,8 @@
+services:
+  app: 
+     build: .
+     image: application
+     container_name: application
+     volume: 
+
+
