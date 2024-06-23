@@ -4,23 +4,11 @@ RUN apt update && \
     apt update && \
     apt install -y curl git ripgrep tar unzip vim wget locales;
 
-
-
 RUN locale-gen en_US.UTF-8
 
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
-
-
-
-
-# RUN curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage  && \ 
-#   chmod u+x nvim.appimage 
-# RUN ./nvim.appimage --appimage-extract 
-# RUN  ./squashfs-root/AppRun --version && \
-#   mv squashfs-root  /  && \
-#   ln -s /squashfs-root/AppRun /usr/bin/nvim;
 
 RUN wget https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz && \
     tar -zxvf nvim-linux64.tar.gz && \
@@ -30,11 +18,7 @@ RUN wget https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.
     rm -rf nvim-linux64 && \
     rm nvim-linux64.tar.gz;
 
-
 WORKDIR /root
-
-
-
 
 RUN nvim +:q
 
