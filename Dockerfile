@@ -2,12 +2,17 @@ FROM ubuntu:24.04
 
 RUN apt update && \
     apt update && \
-    apt install -y curl git ripgrep tar unzip vim wget;
+    apt install -y curl git ripgrep tar unzip vim wget locales;
 
 
-ENV LANG="en_US.UTF-8" LANGUAGE="en_US:ja" LC_ALL="en_US.UTF-8"
-RUN apt install -y locales && \
-    locale-gen ja_JP.UTF-8;
+
+RUN locale-gen en_US.UTF-8
+
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
+
+
 
 
 # RUN curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage  && \ 
