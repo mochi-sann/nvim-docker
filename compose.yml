@@ -1,8 +1,9 @@
 services:
   app: 
      build: .
-     image: application
-     container_name: application
-     volume: 
+     container_name: app 
+     volumes: # (5)
+      - ./.config/nvim:/root/.config/nvim
+
 
 
