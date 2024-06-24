@@ -1,7 +1,6 @@
 FROM ubuntu:24.04
 
 RUN apt update && \
-    apt update && \
     apt install -y curl git ripgrep tar unzip vim wget locales;
 
 RUN locale-gen en_US.UTF-8
